@@ -36,20 +36,20 @@
 
   <h1>About</h1>
 
-  <div class="box" onclick="window.location.href='biodata.html'">
+  <div class="box" onclick="window.location.href='biodata.php'">
     <h2>Tentang Saya</h2>
     <p>Klik untuk lihat biodata</p>
   </div>
 
   <br>
-  <a href="index.html">← Kembali ke Home</a>
+  <a href="index.php">← Kembali ke Home</a>
 
 </body>
 </html>
 <nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
+  <a href="index.php">Home</a>
+  <a href="about.php">About</a>
+  <a href="contact.php">Contact</a>
 </nav>
 <!DOCTYPE html>
 <html lang="id">
@@ -95,7 +95,7 @@
     <p><b>Hobi:</b> Belajar teknologi, bermain game</p>
   </div>
 
-  <a href="about.html">← Kembali</a>
+  <a href="about.php">← Kembali</a>
 
 </body>
 </html>                                                                                    2

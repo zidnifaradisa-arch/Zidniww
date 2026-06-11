@@ -11,51 +11,54 @@
         </h1>
         <table border="1" align="center" cellspacing="0" cellpadding="10px">
            <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="biodata.html">Biodata</a>
-    <a href="kontak.html">Kontak</a>
-    <a href="mahasiswa.html">Data Mahasiswa</a>
+    <a href="index.php">Home</a>
+    <a href="biodata.php">Biodata</a>
+    <a href="kontak.php">Kontak</a>
+    <a href="mahasiswa.php">Data Mahasiswa</a>
 </nav>
         </table>
         <h2>
             Data Mahasiswa
         </h2>
       <div class="btn-container">
-    <a href="tambahdata.html" class="btn">+ Tambah Data</a>
+    <a href="tambahdata.php" class="btn">+ Tambah Data</a>
 </div>
         <table border="1" cellpadding="5px">
             <tr>
-                <th rowspan="2">No</th>
-                <th rowspan="2">Nama</th>
-                <th rowspan="2">Nim</th>
-                <th rowspan="2">Foto</th>
-                <th colspan="3">Nilai</th>
-                <!-- <td>Baris 1, kolom2</td> -->
+                <th>No</th>
+                <th>Nama</th>
+                <th>Nim</th>
+                <th>Jurusan</th>
+                <th>Email</th>
+                <th>No_hp</th>
+                <th>Foto</th>
+                <th>Aksi</th>
             </tr>
-            <tr>
-                <!-- <td>Baris 2, kolom 1</td> -->
-                <th>UTS</th>
-                <th>UAS</th>
-                <th>Tugas</th>
-
-            </tr>
+            
         <tr>
             <td align="center">1</td>
             <td>Zidni Al Faradisa</td>
             <td>13242520009</td>
-            <td><img src="assets/image/foto.1.jpg" width="70px"></td>
-            <td align="center">90</td>
-            <td align="center">85</td>
-            <td align="center">50</td>
-        </tr>
+            <td align="center">Teknologi Informasi</td>
+            <td align="center">zidnifaradisa@gmail.com</td>
+            <td align="center">0816600063</td>
+             <td><img src="assets/image/foto.1.jpg" width="70px"></td>     
+        <td>
+             <a href="editdata.php"><button> Edit </button></a>
+              <a href="deletedata.php"><button> Hapus </button></a>
+        <td>
         <tr>
            <td align="center">2</td>
            <td>Akhmad Danil wafa</td>
            <td>51244600066</td>
+           <td align="center">Teknologi Informasi</td>
+           <td align="">akhmddanil@gmail.com</td>
+           <td align="center">08516735659</td>
            <td><img src="assets/image/foto.2.jfif" width="70px"></td>
-           <td align="center">90</td>
-           <td align="">85</td>
-           <td align="center">50</td>
+        <td> 
+            <a href="editdata.php"><button> Edit </button></a>
+              <a href="deletedata.php"><button> Hapus </button></a>
+        <td>
         </tr>
         </table>
         <hr>
