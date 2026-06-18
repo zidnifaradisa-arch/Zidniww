@@ -1,3 +1,29 @@
+<?php 
+
+   // API 
+   $koneksi = mysqli_connect("localhost", "root", "", "weeklyzdn");
+
+   $query = "SELECT * FROM mahasiswa";
+
+   $result = mysqli_query($koneksi, $query); /// lemari isi data
+    
+   
+   //while$mhs = mysqli_fetch_assoc($result);
+   // {
+   //     var_dump($mhs);
+   // }
+
+    
+    /// ambil data (fetch) dari lemari
+    /// mysqli_fetch_row array number
+    /// mysqli_fetch_assoc
+    /// mysqli_fetch_array
+    /// mysqli_fetch_object
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,32 +60,28 @@
                 <th>Foto</th>
                 <th>Aksi</th>
             </tr>
+            <?php
+                 while ($mhs = mysqli_fetch_assoc($result))
+                    {
+                
+            ?>        
             
         <tr>
             <td align="center">1</td>
-            <td>Zidni Al Faradisa</td>
-            <td>13242520009</td>
-            <td align="center">Teknologi Informasi</td>
-            <td align="center">zidnifaradisa@gmail.com</td>
-            <td align="center">0816600063</td>
+            <td><?php echo $mhs["nama"] ?></td>
+            <td><?php echo $mhs["nim"] ?></td>
+            <td align="center"><?php echo $mhs["jurusan"] ?></td>
+            <td align="center"><?php echo $mhs["email"] ?></td>
+            <td align="center"><?php echo $mhs["no_hp"] ?></td>
              <td><img src="assets/image/foto.1.jpg" width="70px"></td>     
         <td>
              <a href="editdata.php"><button> Edit </button></a>
               <a href="deletedata.php"><button> Hapus </button></a>
         <td>
         <tr>
-           <td align="center">2</td>
-           <td>Akhmad Danil wafa</td>
-           <td>51244600066</td>
-           <td align="center">Teknologi Informasi</td>
-           <td align="">akhmddanil@gmail.com</td>
-           <td align="center">08516735659</td>
-           <td><img src="assets/image/foto.2.jfif" width="70px"></td>
-        <td> 
-            <a href="editdata.php"><button> Edit </button></a>
-              <a href="deletedata.php"><button> Hapus </button></a>
-        <td>
-        </tr>
+        <?php
+                    }
+        ?>
         </table>
         <hr>
          <table border="1" cellpadding="5px">
