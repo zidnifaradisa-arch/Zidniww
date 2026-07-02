@@ -1,25 +1,8 @@
 <?php 
-
-   // API 
-   $koneksi = mysqli_connect("localhost", "root", "", "weeklyzdn");
-
-   $query = "SELECT * FROM mahasiswa";
-
-   $result = mysqli_query($koneksi, $query); /// lemari isi data
-    
-   
-   //while$mhs = mysqli_fetch_assoc($result);
-   // {
-   //     var_dump($mhs);
-   // }
-
-    
-    /// ambil data (fetch) dari lemari
-    /// mysqli_fetch_row array number
-    /// mysqli_fetch_assoc
-    /// mysqli_fetch_array
-    /// mysqli_fetch_object
-
+ 
+     require 'fungsi.php';
+     $query = "SELECT * FROM mahasiswa";
+     $mahasiswa = tampildata($query);
 ?>
 
 
@@ -60,8 +43,9 @@
                 <th>Foto</th>
                 <th>Aksi</th>
             </tr>
-            <?php
-                 while ($mhs = mysqli_fetch_assoc($result))
+                <?php
+                $no = 1;
+                foreach($mahasiswa as $mhs)
                     {
                 
             ?>        
@@ -75,12 +59,13 @@
             <td align="center"><?php echo $mhs["no_hp"] ?></td>
              <td><img src="assets/image/foto.1.jpg" width="70px"></td>     
         <td>
-             <a href="editdata.php"><button> Edit </button></a>
-              <a href="deletedata.php"><button> Hapus </button></a>
+             <a href="editdata.php?id=<?= $mhs["id"] ?>"><button>Edit</button></a>
+             <a href="deletedata.php?id=<?= $mhs["id"] ?>"  onclick="return confirm('Yaqqueeeenn???')"><button> Hapus </button></a>
         <td>
         <tr>
         <?php
-                    }
+            $no++;
+                }
         ?>
         </table>
         <hr>

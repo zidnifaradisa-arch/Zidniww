@@ -1,38 +1,26 @@
 <?php
 require 'fungsi.php';
 
-if (isset($_POST['kirim'])) {
-
-    $nama    = $_POST['nama'];
-    $nim     = $_POST['nim'];
-    $jurusan = $_POST['jurusan'];
-    $email   = $_POST['email'];
-    $no_hp   = $_POST['no_hp'];
-    $foto    = $_POST['foto'];
-
-    $query = "INSERT INTO mahasiswa
-              (nama, nim, jurusan, email, no_hp, foto)
-              VALUES
-              ('$nama', '$nim', '$jurusan', '$email', '$no_hp', '$foto')";
-
-    $hasil = mysqli_query($koneksi, $query);
-
-    if ($hasil) {
+if (isset($_POST['kirim'])) 
+{
+    if (tambahdata($_POST, $_FILES["foto"]) > 0) {
         echo "
         <script>
-            alert('Data berhasil ditambahkan!');
-            window.location='mahasiswa.php';
+            alert('Data berhasil ditambahkan');
+            document.location.href='mahasiswa.php';
         </script>
         ";
     } else {
-        echo "Error: " . mysqli_error($koneksi);
+        echo mysqli_error($koneksi);
     }
 }
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Mahasiswa</title>
 </head>
 <body>
@@ -40,27 +28,47 @@ if (isset($_POST['kirim'])) {
 <h2>Tambah Data Mahasiswa</h2>
 
 <form action="" method="post">
+    <table cellpadding="5">
 
-    <label>Nama</label><br>
-    <input type="text" name="nama" required><br><br>
+        <tr>
+            <td>Nama</td>
+            <td><input type="text" name="nama" required></td>
+        </tr>
 
-    <label>NIM</label><br>
-    <input type="text" name="nim" required><br><br>
+        <tr>
+            <td>NIM</td>
+            <td><input type="text" name="nim" required></td>
+        </tr>
 
-    <label>Jurusan</label><br>
-    <input type="text" name="jurusan" required><br><br>
+        <tr>
+            <td>Jurusan</td>
+            <td><input type="text" name="jurusan" required></td>
+        </tr>
 
-    <label>Email</label><br>
-    <input type="email" name="email" required><br><br>
+        <tr>
+            <td>Email</td>
+            <td><input type="email" name="email" required></td>
+        </tr>
 
-    <label>No HP</label><br>
-    <input type="text" name="no_hp" required><br><br>
+        <tr>
+            <td>No HP</td>
+            <td><input type="text" name="no_hp" required></td>
+        </tr>
 
-    <label>Foto</label><br>
-    <input type="text" name="foto"><br><br>
+        <tr>
+            <td>Foto</td>
+            <td><input type="file" name="foto"></td>
+        </tr>
 
-    <button type="submit" name="kirim">Tambah Data</button>
+        <tr>
+            <td colspan="2">
+                <button type="submit" name="kirim">
+                    Tambah Data
+                </button>
+            </td>
+        </tr>
 
+    </table>
 </form>
 
 </body>
